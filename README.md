@@ -4,37 +4,25 @@
 
 ## Description
 
-This is a search list app built in TypeScript, which fetches user data and provides various functionalities like sorting, filtering by country, deleting rows, and restoring the initial state.
+This is a user search list web application built with TypeScript, React, and CSS. The application fetches user data and provides a range of functionalities to enhance user experience.
 
-## Features
+Users can sort the table data by clicking on any column header, and they can also filter the data by country. The application also provides the ability to delete individual rows from the table and restore the initial state of the table.
 
-Fetch user data
-Sort data by clicking on column headers
-Filter data by country
-Delete rows
-Restore the initial state
+In addition to the above features, the application also provides an option to color-code rows in the table based on a specific condition. This can help users to quickly identify specific rows based on their preferences or criteria.
+
+Overall, this application is designed to be easy-to-use and customizable, making it a great tool for anyone who needs to search and manage user data.
 
 ## Installation
 
-Clone the repository
-
-Install dependencies using `npm install`
-Start the app using `npm start`
-
-## Usage
-
-Enter a search query in the search bar to search for a user.
-Click on any column header to sort the data.
-Use the country filter to filter the data by country.
-Click on the "Delete" button next to a row to delete it.
-Click on the "Restore" button to restore the initial state of the table.
+- Clone the repository usin git.
+- Install dependencies using `npm install`
+- Start the app using `npm start`
 
 ## Technologies Used
 
-TypeScript
-React
-CSS
-HTML
+- TypeScript
+- React
+- CSS
 
 ## License
 
