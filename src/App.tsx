@@ -1,27 +1,33 @@
-import { useEffect, useState } from "react"
-import { type User } from './types'
+import { useEffect, useState } from "react";
+import { User } from "./types";
+import { UsersList } from './components/UserList';
 
 function App() {
-
-  const [users, setUsers] = useState<Array<User[]>>([])
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch('http://randomuser.me/api?result=100')
-      .then(res => res.json())
+    fetch('https://randomuser.me/api?results=100')
       .then(res => {
-      setUsers(res.results)
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
       })
-      .catch(err => 
-      console.error(err))
-  },[])
+      .then(data => {
+        setUsers(data.results.flat());
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }, []);
 
   return (
     <div>
-  
-      <h1>User List</h1>
-      {JSON.stringify(users)}
+      <h1>Tricky User List</h1>
+      <UsersList users={users} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
