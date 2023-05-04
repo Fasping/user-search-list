@@ -32,7 +32,7 @@ function App() {
       <h1>Tricky User List</h1>
       <header>
         <button onClick={toggleColors}>
-          Colorear files
+          Color rows
         </button>
       </header>
       <main>
