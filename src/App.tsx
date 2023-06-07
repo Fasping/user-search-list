@@ -31,6 +31,11 @@ function App() {
       });
   }, []);
 
+  const handleDelete = (email: string) => {
+    const filteredUsers = users.filter((user) => user.email === email)
+    setUsers(filteredUsers)
+  }
+
   const sortedUser = sortByCountry ? users.toSorted((a, b) => {
     return a.location.country.localeCompare(b.location.country)
   }) : users
@@ -47,7 +52,7 @@ function App() {
         </button>
       </header>
       <main>
-        <UsersList showColors={showColors} users={sortedUser} />
+        <UsersList deleteUser={handleDelete} showColors={showColors} users={sortedUser} />
       </main>
     </div>
   );
